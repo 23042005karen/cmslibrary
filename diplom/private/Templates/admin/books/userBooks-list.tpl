@@ -1,0 +1,91 @@
+<div class="card-header">
+    <div class="heading-elements">
+        <select name="sortColumn" id="books-sort" class="select-picker pr-2 d-tc" autocomplete="off">
+            <option value="Issues.issueDate" data-order="DESC"{if $smarty.session.issuedBookSortingOrder == 'DESC' and $smarty.session.issuedBookSortingColumn == 'Issues.issueDate'} selected{/if}>{t}Issue Date Descending{/t}</option>
+            <option value="Issues.issueDate" data-order="ASC"{if $smarty.session.issuedBookSortingOrder == 'ASC' and $smarty.session.issuedBookSortingColumn == 'Issues.issueDate'} selected{/if}>{t}Issue Date Ascending{/t}</option>
+            <option value="Issues.expiryDate" data-order="DESC"{if $smarty.session.issuedBookSortingOrder == 'DESC' and $smarty.session.issuedBookSortingColumn == 'Issues.expiryDate'} selected{/if}>{t}Expiry Date Descending{/t}</option>
+            <option value="Issues.expiryDate" data-order="ASC"{if $smarty.session.issuedBookSortingOrder == 'ASC' and $smarty.session.issuedBookSortingColumn == 'Issues.expiryDate'} selected{/if}>{t}Expiry Date Ascending{/t}</option>
+            <option value="Books.title" data-order="DESC"{if $smarty.session.bookSortingOrder == 'DESC' and $smarty.session.bookSortingColumn == 'Books.title'} selected{/if}>{t}Title Descending{/t}</option>
+            <option value="Books.title" data-order="ASC"{if $smarty.session.bookSortingOrder == 'ASC' and $smarty.session.bookSortingColumn == 'Books.title'} selected{/if}>{t}Title Ascending{/t}</option>
+            <option value="Books.publishingYear" data-order="DESC"{if $smarty.session.bookSortingOrder == 'DESC' and $smarty.session.bookSortingColumn == 'Books.publishingYear'} selected{/if}>{t}Year Descending{/t}</option>
+            <option value="Books.publishingYear" data-order="ASC"{if $smarty.session.bookSortingOrder == 'ASC' and $smarty.session.bookSortingColumn == 'Books.publishingYear'} selected{/if}>{t}Year Ascending{/t}</option>
+        </select>
+        <select name="perPage" id="countPerPage" class="select-picker d-tc" autocomplete="off">
+            {foreach from=$siteViewOptions->getOption("booksPerPageAdmin")->getListValues() key=key item=value}
+                <option value="{$key}"{if ($smarty.session.bookPerPage == null and strcmp($key,$siteViewOptions->getOption("booksPerPageAdmin")->getValue()) === 0) or strcmp($key,$smarty.session.bookPerPage) === 0} selected{/if}>{t count=$value 1=$value plural="%1 Books"}1 Book{/t}</option>
+            {/foreach}
+        </select>
+    </div>
+</div>
+<table class="table table-striped table-bordered user-books table-responsive">
+    <thead>
+        <tr>
+            <th>{t}Title{/t}</th>
+            <th style="width: 140px;" class="text-center">{t}Issue Date{/t}</th>
+            <th style="width: 140px;" class="text-center">{t}Expiry Date{/t}</th>
+            <th style="width: 160px;" class="text-center">{t}Fine / Penalty{/t} ({$siteViewOptions->getOptionValue("priceCurrency")})</th>
+        </tr>
+    </thead>
+    <tbody>
+        {if isset($books) and $books != null}
+            {foreach from=$books item=book name=book}
+                <tr>
+                    <td>
+                        <a href="{$routes->getRouteString("bookView",["bookId"=>$book->getId()])}" target="_blank">{$book->getTitle()}</a>
+                        {if $book->getPublishingYear() != null}
+                            <span class="text-muted ml-1">({$book->getPublishingYear()})</span>
+                        {/if}
+                        {if $book->getPublisher() != null}
+                            <div class="book-list-info">
+                                <strong class="text-uppercase">{t}Publisher{/t}:</strong>
+                                {$book->getPublisher()->getName()}
+                            </div>
+                        {/if}
+                        {if $book->getGenres() !== null and is_array($book->getGenres()) and count($book->getGenres()) > 0}
+                            <div class="book-list-info">
+                                <strong class="text-uppercase">{t}Genre{/t}:</strong>
+                                {foreach from=$book->getGenres() item=genre name=genre}
+                                    {$genre->getName()}{if $smarty.foreach.genre.last}{else},{/if}
+                                {/foreach}
+                            </div>
+                        {/if}
+                        {if $book->getAuthors() !== null and is_array($book->getAuthors()) and count($book->getAuthors()) > 0}
+                            <div class="book-list-info">
+                                <strong class="text-uppercase">{t}Author{/t}:</strong>
+                                {foreach from=$book->getAuthors() item=author name=author}
+                                    {$author->getLastName()} {$author->getFirstName()}{if $smarty.foreach.author.last}{else},{/if}
+                                {/foreach}
+                            </div>
+                        {/if}
+
+                        {if $book->getEBookId() != null}
+                            <div class="book-list-info">
+                                <strong class="text-uppercase">{t}eBook{/t}:</strong>
+                                {if $siteViewOptions->getOptionValue("showDownloadLink") or (isset($user) and $user->getRole() != null and $user->getRole()->getPriority() > 100)}
+                                    <a href="{$routes->getRouteString("electronicBookGet",["electronicBookId"=>$book->getEBookId()])}" class="ml-1"><i class="fa fa-download" aria-hidden="true"></i> {t}Download{/t}
+                                    </a>
+                                {/if}
+                                <a href="{$routes->getRouteString("electronicBookViewAdmin",["bookId"=>$book->getId()])}" class="ml-1"><i class="fa fa-eye" aria-hidden="true"></i> {t}Read{/t}
+                                </a>
+                            </div>
+                        {/if}
+                    </td>
+                    <td class="text-center">
+                        {$book->getIssue()->getIssueDate()|date_format:$siteViewOptions->getOptionValue("dateFormat")}
+                    </td>
+                    <td class="text-center">
+                        {$book->getIssue()->getExpiryDate()|date_format:$siteViewOptions->getOptionValue("dateFormat")}
+                    </td>
+                    <td class="text-center">
+                        {$book->getIssue()->getPenalty()}
+                    </td>
+                </tr>
+            {/foreach}
+        {else}
+            <tr>
+                <td colspan="4" class="text-center">{t}You don't have any books yet{/t}</td>
+            </tr>
+        {/if}
+    </tbody>
+</table>
+{include "admin/general/pagination.tpl"}

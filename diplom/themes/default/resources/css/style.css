@@ -1,0 +1,1718 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,400i,500,600,700|Poppins:300,400,400i,500,600,700');
+
+* {
+    outline : none;
+}
+
+html {
+    position   : relative;
+    min-height : 100%;
+}
+
+body {
+    background    : #F4F7F9; /*    F4F7F9   */
+    font-family   : "Poppins", sans-serif;
+    margin        : 0;
+    overflow-x    : hidden;
+    color         : #8D97AD;
+    font-weight   : 300;
+    margin-bottom : 60px;
+}
+
+a:hover, a:focus {
+    text-decoration : none;
+}
+
+button:focus {
+    outline : 0 !important;
+}
+
+.form-control:focus {
+    box-shadow : none;
+}
+
+/* ---------------------------------------------
+                    HEADER
+--------------------------------------------- */
+.header {
+    position      : relative;
+    z-index       : 999;
+    border-bottom : 1px solid #F3F3F3;
+    background    : #FFFFFF;
+}
+
+.header .navbar {
+    margin  : 0;
+    padding : 0;
+}
+
+/* ---------------------------------------------
+                 HEADER MENU
+--------------------------------------------- */
+.primary-menu li a {
+    color          : #6A85A6;
+    display        : block;
+    font-family    : "Poppins", sans-serif;
+    font-size      : 14px;
+    padding        : 20px 15px;
+    font-weight    : 500;
+    opacity        : 0.7;
+    text-transform : uppercase;
+}
+
+.primary-menu li a:hover {
+    opacity : 1;
+}
+
+.primary-menu li a i {
+    font-size : 9px;
+}
+
+.primary-menu li a.dropdown-item {
+    padding : 8px 1rem;
+    color   : #8D97AD;
+}
+
+.primary-menu .dropdown-menu {
+    border             : 0px;
+    -webkit-box-shadow : 0px 5px 20px rgba(150, 150, 150, 0.1);
+    box-shadow         : 0px 5px 20px rgba(150, 150, 150, 0.1);
+}
+
+.dropdown-submenu .dropdown-item > .ml-auto {
+    position : absolute;
+    right    : 15px;
+    top      : 25px;
+}
+
+.dropdown-submenu {
+    position : relative;
+}
+
+.dropdown-submenu .dropdown-item > .ml-auto {
+    position : absolute;
+    right    : 15px;
+    top      : 17px;
+}
+
+.dropdown-submenu > .dropdown-menu {
+    top           : 0;
+    left          : 100%;
+    margin-left   : 0;
+    border-radius : 0.25rem;
+    display       : none;
+}
+
+.dropdown-submenu > .dropdown-menu.menu-right {
+    left  : auto;
+    right : 100%;
+}
+
+.dropdown-submenu > .dropdown-menu.menu-left {
+    left  : 100%;
+    right : auto;
+}
+
+.dropdown-submenu.pull-left {
+    float : none;
+}
+
+.dropdown-submenu.pull-left > .dropdown-menu {
+    left : -75%;
+}
+
+.dropdown-menu .divider {
+    background-color : rgba(120, 130, 140, 0.13);
+    height           : 1px;
+    margin           : 9px 0;
+    overflow         : hidden;
+}
+
+@media (min-width : 992px) {
+    .primary-menu .dropdown .dropdown-menu {
+        min-width  : 210px;
+        margin-top : 0px;
+    }
+
+    .primary-menu .dropdown:hover > .dropdown-menu {
+        display           : block;
+        margin-top        : 0;
+        opacity           : 1;
+        animation         : zoomIn .4s;
+        -moz-animation    : zoomIn .4s;
+        -webkit-animation : zoomIn .4s;
+    }
+
+    .primary-menu .dropdown:hover > .dropdown-menu {
+        display    : block;
+        margin-top : 0px;
+    }
+
+    .primary-menu > .dropdown .dropdown-menu {
+        min-width  : 210px;
+        margin-top : 0px;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display           : block;
+        animation         : zoomInRight .4s;
+        -moz-animation    : zoomInRight .4s;
+        -webkit-animation : zoomInRight .4s;
+
+    }
+}
+
+/* ---------------------------------------------
+              HEADER MENU ICONS
+--------------------------------------------- */
+.menu-icons {
+    text-align : right;
+}
+
+.menu-icons a {
+    color          : #6A85A6;
+    font-size      : 14px;
+    font-weight    : 500;
+    opacity        : 0.7;
+    text-transform : uppercase;
+    padding        : 25px 10px;
+}
+
+.menu-icons a:hover {
+    opacity : 1;
+}
+
+.menu-icons a.dropdown-item {
+    padding : 8px 1rem;
+    color   : #8D97AD;
+}
+
+.menu-icons .dropdown-menu {
+    border             : 0px;
+    -webkit-box-shadow : 0px 5px 20px rgba(150, 150, 150, 0.1);
+    box-shadow         : 0px 5px 20px rgba(150, 150, 150, 0.1);
+}
+
+.user-dropdown, .languages {
+    position : relative;
+}
+
+.menu-icons .user-menu + .dropdown-menu.show, .menu-icons .lang-select + .dropdown-menu.show {
+    display           : block;
+    margin-top        : 0;
+    opacity           : 1;
+    animation         : zoomIn .4s;
+    -moz-animation    : zoomIn .4s;
+    -webkit-animation : zoomIn .4s;
+    right             : -60px;
+    left              : auto !important;
+    min-width         : 160px;
+}
+
+.menu-icons .lang-select + .dropdown-menu.show {
+    text-align : left;
+    /*min-width  : 150px;
+    right      : 0px;*/
+}
+
+.menu-icons .flag {
+    vertical-align : middle;
+    margin-right   : 5px;
+}
+
+.dropdown-item.active, .dropdown-item:active {
+    background-color : #0A9DF3;
+    opacity          : 1;
+    color            : #FFFFFF !important;
+}
+
+@media (min-width : 992px) {
+    .menu-icons .dropdown-menu {
+        min-width  : 210px;
+        margin-top : 0;
+        text-align : center;
+    }
+
+    /*.menu-icons .user-menu:hover + .dropdown-menu {
+        display           : block;
+        margin-top        : -5px;
+        opacity           : 1;
+        animation         : zoomIn .4s;
+        -moz-animation    : zoomIn .4s;
+        -webkit-animation : zoomIn .4s;
+        right             : 0;
+        left              : auto;
+        padding           : 0;
+    }*/
+
+}
+
+/* ---------------------------------------------
+                HEADER SEARCH
+--------------------------------------------- */
+.search-header {
+    width         : 100%;
+    position      : absolute;
+    top           : 1px;
+    right         : 0;
+    box-shadow    : 0 5px 0 rgba(18, 25, 33, 0.1);
+    border-radius : 10px;
+}
+
+.search-header.open {
+    opacity           : 1;
+    display           : block;
+    animation         : fadeInDown .8s;
+    -moz-animation    : fadeInDown .8s;
+    -webkit-animation : fadeInDown .8s;
+}
+
+.search-header.hide {
+    opacity : 0;
+    display : none;
+}
+
+.search-header.out {
+    animation           : fadeOutUp .8s;
+    -moz-animation      : fadeOutUp .8s;
+    -webkit-animation   : fadeOutUp .8s;
+    animation-fill-mode : forwards;
+}
+
+.search-header .search-input {
+    display          : block;
+    width            : 100%;
+    padding          : 10px 50px;
+    font-size        : 1rem;
+    color            : #495057;
+    background-color : #FFFFFF;
+    background-clip  : padding-box;
+    border           : 1px solid #F3F3F3;
+    border-radius    : 0;
+    transition       : border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.search-header button[type="submit"] {
+    background : none;
+    position   : absolute;
+    left       : 0;
+    top        : 5px;
+    border     : 0;
+    color      : #0A9DF3;
+    cursor     : pointer;
+    font-size  : 20px;
+}
+
+.search-header .search-close {
+    right     : 20px;
+    top       : 12px;
+    color     : #D7D7D7;
+    position  : absolute;
+    font-size : 20px;
+}
+
+.search-header .search-close:hover {
+    color  : #B0B0B0;
+    cursor : pointer;
+}
+
+/* ---------------------------------------------
+            HEADER MENU TOGGLE
+--------------------------------------------- */
+.menu-toggler {
+    display  : none;
+    position : absolute;
+    top      : -12px;
+    left     : 0;
+    right    : 0;
+    bottom   : 0;
+    width    : 20px;
+    height   : 45px;
+    cursor   : pointer;
+}
+
+.bar,
+.bar:after,
+.bar:before {
+    width  : 20px;
+    height : 3px;
+}
+
+.bar {
+    position   : relative;
+    transform  : translateY(25px);
+    background : #6A85A6;
+    transition : all 0ms 300ms;
+}
+
+.bar.animate {
+    background : rgba(255, 255, 255, 0);
+}
+
+.bar:before {
+    content    : "";
+    position   : absolute;
+    left       : 0;
+    bottom     : 7px;
+    background : #6A85A6;
+    transition : bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar:after {
+    content    : "";
+    position   : absolute;
+    left       : 0;
+    top        : 7px;
+    background : #6A85A6;
+    transition : top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:after {
+    top        : 0;
+    transform  : rotate(45deg);
+    transition : top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.bar.animate:before {
+    bottom     : 0;
+    transform  : rotate(-45deg);
+    transition : bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ---------------------------------------------
+            HEADER LOGIN BOX
+--------------------------------------------- */
+.login-box.show {
+    animation         : fadeIn .8s;
+    -moz-animation    : fadeIn .8s;
+    -webkit-animation : fadeIn .8s;
+}
+
+.login-box .modal-dialog {
+    max-width : 400px;
+    /*margin: 68px auto;*/
+}
+
+.login-box .modal-content {
+    border             : 0;
+    -webkit-box-shadow : 0 5px 20px rgba(150, 150, 150, 0.1);
+    box-shadow         : 0 5px 20px rgba(150, 150, 150, 0.1);
+}
+
+.login-box .modal-body {
+    margin  : 0;
+    padding : 0;
+    border  : 0;
+}
+
+.card {
+    border-radius : 0;
+    border        : 0;
+}
+
+/* ---------------------------------------------
+                FORM ELEMENTS
+--------------------------------------------- */
+.form-control {
+    padding : .55rem .75rem;
+    border  : 2px solid rgba(120, 130, 140, 0.15);
+}
+
+.form-control.error {
+    border : 2px solid rgba(255, 42, 68, 0.9);
+}
+
+label.error {
+    color : rgba(255, 42, 68, 0.9);
+}
+
+.form-message {
+    margin     : 20px 0;
+    text-align : center;
+    color      : rgba(120, 130, 140, 0.8);
+    padding    : 10px;
+}
+
+.form-message.success {
+    color : rgba(75, 163, 79, 0.9);
+}
+
+.form-message.error {
+    color : rgba(255, 42, 68, 0.9);
+}
+
+.btn {
+    border-radius : 0;
+}
+
+.btn:focus, .btn:active:focus, .btn:active {
+    box-shadow : none !important;
+}
+
+.btn-rounded {
+    border-radius : 3%;
+}
+
+.btn-primary {
+    color            : #FFFFFF;
+    background-color : #059BF3;
+    border-color     : #059BF3;
+}
+
+.btn-primary.shadow {
+    transition         : all 0.1s;
+    -webkit-transition : all 0.1s;
+    box-shadow         : 0 4px 0 #0582D6;
+}
+
+.btn-primary.shadow:active {
+    transform         : translate(0px, 5px);
+    -webkit-transform : translate(0px, 5px);
+    border-bottom     : 1px solid;
+}
+
+.btn-primary:hover {
+    background-color : #0B8DDA;
+    border-color     : #0B8DDA;
+}
+
+.btn-success {
+    color            : #FFFFFF;
+    background-color : #5BD198;
+    border-color     : #5BD198;
+}
+
+.btn-success:hover {
+    background-color : #3CC281;
+    border-color     : #3CC281;
+}
+
+.btn-warning {
+    color            : #FFFFFF;
+    background-color : #F1C63D;
+    border-color     : #F1C63D;
+}
+
+.btn-warning:hover {
+    background-color : #E6BB3C;
+    border-color     : #E6BB3C;
+}
+
+.btn-danger {
+    color            : #FFFFFF;
+    background-color : #D94134;
+    border-color     : #D94134;
+}
+
+.btn-danger:hover {
+    background-color : #C24033;
+    border-color     : #C24033;
+}
+
+.btn-inverse {
+    background-color : #232A37;
+    border-color     : #232A37;
+}
+
+.btn-secondary {
+    color            : #FFFFFF;
+    background-color : #6C757D;
+    border-color     : #6C757D;
+}
+
+.btn-secondary.shadow {
+    transition         : all 0.1s;
+    -webkit-transition : all 0.1s;
+    box-shadow         : 0 4px 0 #535C64;
+}
+
+.btn-secondary.shadow:active {
+    transform         : translate(0px, 5px);
+    -webkit-transform : translate(0px, 5px);
+    border-bottom     : 1px solid;
+}
+
+.custom-select {
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    border             : 0;
+}
+
+.custom-control-label:before {
+    background-color : #EBECEE;
+    border-radius    : 0;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+    background-color : #059BF3;
+}
+
+.custom-control-input:focus ~ .custom-control-label::before {
+    box-shadow : none;
+}
+
+.modal-backdrop.show {
+    opacity : 0;
+}
+
+.alert-danger {
+    color            : #FFFFFF;
+    background-color : #D94134;
+    border-color     : #D94134;
+}
+
+.alert-warning {
+    color            : #FFFFFF;
+    background-color : #E6BB3C;
+    border-color     : #E6BB3C;
+}
+
+.alert-success {
+    color            : #FFFFFF;
+    background-color : #3CC281;
+    border-color     : #3CC281;
+}
+
+.alert-info {
+    color            : #FFFFFF;
+    background-color : #0B8DDA;
+    border-color     : #0B8DDA;
+}
+
+/* ---------------------------------------------
+                PAGINATION
+--------------------------------------------- */
+.pagination {
+
+}
+
+.page-item .page-link {
+    position         : relative;
+    float            : left;
+    padding          : 6px 12px;
+    line-height      : 1.428571429;
+    text-decoration  : none;
+    color            : #76828F;
+    border           : 0;
+    margin-left      : -1px;
+    box-shadow       : 0 4px 0 #E3E3E3;
+    background-color : #F5F5F5;
+    font-weight      : 600;
+}
+
+.page-item.active .page-link, .page-item .page-link:hover {
+    background : #059BF3;
+    box-shadow : 0 4px 0 #0582D6;
+    color      : #FFFFFF;
+}
+
+.page-item .page-link i {
+    font-size : 12px;
+}
+
+/* ---------------------------------------------
+                HOME PAGE
+--------------------------------------------- */
+.section-title {
+    margin : 20px 0;
+}
+
+.section-title h2 {
+    color       : #3D3D3D;
+    font-family : "Montserrat", sans-serif;
+    font-weight : 700;
+    font-size   : 1.75rem;
+}
+
+/* ---------------------------------------------
+                AUTHOR LIST
+--------------------------------------------- */
+.authors-listing {
+    margin : 10px 0 100px;
+}
+
+.mini-list-authors {
+
+}
+
+.mini-list-authors .author {
+    margin : 10px 0;
+}
+
+.mini-list-authors .author-photo {
+    float        : left;
+    width        : 48px;
+    margin-right : 15px;
+}
+
+.mini-list-authors .author-info {
+    float : left;
+    max-width: 190px;
+}
+
+.mini-list-authors .author-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.mini-list-authors .author-photo img {
+    width              : 48px;
+    height             : 48px;
+    -webkit-box-shadow : 0px 0px 10px rgba(110, 110, 110, 0.3);
+    box-shadow         : 0px 0px 10px rgba(110, 110, 110, 0.3);
+    margin-right       : 20px;
+}
+
+.mini-list-authors .author a {
+    color       : #000000;
+    font-weight : 400;
+}
+
+.mini-list-authors .author-books {
+
+}
+
+.authors-list {
+
+}
+
+.authors-list .author {
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    background         : #FFFFFF;
+    margin             : 0 0 20px;
+}
+
+.authors-list .author img {
+    width  : 160px;
+    height : 210px;
+}
+
+.authors-list .author-info {
+    text-align : center;
+}
+
+.authors-list .author-name {
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+}
+
+.authors-list .author-name a {
+    font-size   : 1rem;
+    color       : #000000;
+    font-weight : 400;
+}
+
+/* ---------------------------------------------
+                   AUTHOR
+--------------------------------------------- */
+.single-author {
+    margin : 60px 0 100px;
+}
+
+.single-author .author {
+
+}
+
+.single-author .author-photo {
+    width : 130px;
+}
+
+.single-author h1 {
+    font-weight : 700;
+    font-family : "Montserrat", sans-serif;
+    text-align  : center;
+    color       : #000000;
+    margin      : 20px 0;
+}
+
+.single-author .author-info {
+    margin-bottom : 45px;
+}
+
+.single-author .description-author {
+    transition : height 200ms;
+    overflow   : hidden;
+    max-height : 3em; /* (2 * 1.5 = 6) */
+}
+
+.single-author .author-info a {
+    color : #6E7689;
+}
+
+.single-publisher {
+    margin : 60px 0 100px;
+}
+
+.single-publisher h1 {
+    font-weight : 700;
+    font-family : "Montserrat", sans-serif;
+    text-align  : center;
+    color       : #000000;
+    margin      : 20px 0;
+}
+
+/* ---------------------------------------------
+                  BOOK LIST
+--------------------------------------------- */
+.books-listing {
+    margin : 10px 0 100px;
+}
+
+.book-list .book {
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    border-radius      : 3px;
+    margin             : 20px 0;
+    height             : 170px;
+    padding            : 15px 5px;
+    background         : #FFFFFF; /*  FCFEFF  */
+}
+
+.book-cover {
+    position : relative;
+}
+
+.book-list .book-cover img {
+    position           : absolute;
+    top                : -40px;
+    max-width          : 110px;
+    -webkit-box-shadow : 0 5px 10px rgba(150, 150, 150, 0.6);
+    box-shadow         : 0 5px 10px rgba(150, 150, 150, 0.6);
+    height             : 170px;
+    width              : 110px;
+}
+
+.book-list .book-3-row .book-cover img {
+    height : 140px;
+    width  : 95px;
+}
+
+.book-info {
+
+}
+
+.book-title {
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+}
+
+.book .book-title a {
+    font-size   : 1rem;
+    color       : #000000;
+    font-weight : 400;
+}
+.book .book-attr {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.book .book-publishing-year {
+    color     : #9C9C9C;
+    font-size : .8rem;
+}
+
+.book .book-author {
+    color         : #9C9C9C;
+    font-size     : .8rem;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+}
+
+.book .book-short-description {
+    color      : #738797;
+    font-size  : .80rem;
+    max-height : 57px;
+    overflow   : hidden;
+}
+
+.book .book-settings {
+    position : absolute;
+    top      : -15px;
+    right    : 5px;
+    display  : none;
+}
+
+.book .book-settings a {
+    color     : #8CA4B3;
+    font-size : .9rem;
+}
+
+.book-rating {
+    color : #CCCCCC;
+}
+
+.book-rating.general {
+    margin : 10px 0;
+}
+
+.rate-book {
+    color      : #9C9C9C;
+    font-size  : .8rem;
+    text-align : center;
+    margin     : 0 10px 0 0;
+    display    : inline-block;
+}
+
+.book-rating.user-rating {
+    display : inline-block;
+}
+
+.book-rating.user-rating i {
+    cursor : pointer;
+}
+
+.book-rating.user-rating i.fas {
+    color : #FF9700;
+}
+
+.save-rating {
+    display : none;
+}
+
+.save-rating.on {
+    display : inline-block;
+}
+
+.book-rating .separator {
+    margin : 0 5px;
+}
+
+.book-rating-box {
+    position    : relative;
+    font-family : "Font Awesome\ 5 Free";
+    display     : inline-block;
+    color       : #CCCCCC;
+}
+
+.book-rating-box:before {
+    content : "\f005 \f005 \f005 \f005 \f005";
+}
+
+.book-rating-box .rating {
+    position    : absolute;
+    left        : 0;
+    top         : 0;
+    white-space : nowrap;
+    overflow    : hidden;
+    color       : #FF9700;
+    font-weight : 900;
+}
+
+.book-rating-box .rating:before {
+    content : "\f005 \f005 \f005 \f005 \f005";
+}
+
+.whole-rating, .user-mark {
+    color       : #9C9C9C;
+    font-size   : .8rem;
+    margin-left : 10px;
+    display     : inline-block;
+}
+
+.user-mark.off {
+    display : none;
+}
+
+.top-filter {
+    margin : 30px 0 30px;
+}
+
+.top-filter .text {
+    padding : 10px 0 0;
+}
+
+.book-filter h2 {
+    color          : #3D3D3D;
+    font-family    : "Montserrat", sans-serif;
+    font-weight    : 700;
+    font-size      : 1.55rem;
+    text-align     : center;
+    margin         : 32px 0 30px;
+    text-transform : uppercase;
+}
+
+.book-filter .select2-container {
+    width              : 100% !important;
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    border             : 0;
+}
+
+.book-filter .select2-container--default .select2-selection--multiple {
+    border : 2px solid transparent;
+}
+
+.book-filter .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple, .book-filter .select2-container--default.select2-container--focus .select2-selection--multiple {
+    border : 2px solid rgba(120, 130, 140, 0.15);
+}
+
+.book-filter .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color : #008CEE;
+    border           : 1px solid #008CEE;
+    border-radius    : 0;
+    color            : #FFFFFF;
+}
+
+.book-filter .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color        : #FFFFFF;
+    font-weight  : normal;
+    margin-right : 5px;
+}
+
+.show-filter {
+    display    : none;
+    position   : absolute;
+    top        : 35px;
+    right      : 0;
+    border     : 0;
+    background : transparent;
+    font-size  : 1.45rem;
+}
+
+.show-filter:hover {
+    color  : #0B8DDA;
+    cursor : pointer;
+}
+
+#book-filter.in,
+#book-filter.collapsing,
+#book-filter.collapse.show {
+    display : block !important;
+}
+
+.select2-container--open .select2-dropdown--below {
+    border    : 2px solid rgba(120, 130, 140, 0.15);
+    font-size : .8rem;
+}
+
+/* ---------------------------------------------
+                   PRELOADER
+--------------------------------------------- */
+.preloader {
+    z-index  : 999;
+    width    : 100%;
+    height   : 100%;
+    position : absolute;
+    display  : none;
+}
+
+.preloader .overlay {
+    background : rgba(244, 247, 249, 0.65);
+    height     : 100%;
+    width      : 100%;
+}
+
+.loader {
+    background    : #0A9DF3;
+    border-radius : 50%;
+    height        : 50px;
+    left          : 50%;
+    margin-left   : -23px;
+    margin-top    : -14px;
+    position      : absolute;
+    top           : 50%;
+    width         : 50px;
+    animation     : load 0.75s linear infinite;
+}
+
+.loader:after {
+    content       : '';
+    position      : absolute;
+    width         : 49px;
+    height        : 49px;
+    top           : 2px;
+    right         : 0;
+    left          : 0;
+    margin        : auto;
+    background    : #F4F7F9;
+    border-radius : 50%;
+}
+
+@keyframes load {
+    to {
+        transform : rotate(360deg);
+    }
+}
+
+.preloader .loader {
+    top    : 10%;
+    left   : 0;
+    right  : 0;
+    margin : auto;
+}
+
+/* ---------------------------------------------
+                    BOOK
+--------------------------------------------- */
+.single-book {
+    margin : 50px 0 100px;
+    color  : #000000;
+}
+
+.single-book h1 {
+    font-weight    : 700;
+    font-family    : "Montserrat", sans-serif;
+    text-transform : uppercase;
+}
+
+.single-book h2 {
+    font-weight    : 700;
+    font-family    : "Montserrat", sans-serif;
+    text-transform : uppercase;
+}
+
+.single-book h3 {
+    font-weight    : 700;
+    font-family    : "Montserrat", sans-serif;
+    text-transform : uppercase;
+}
+
+.single-book .book-cover img {
+    -webkit-box-shadow : 0 2px 11px rgba(150, 150, 150, 0.5);
+    box-shadow         : 0 2px 11px rgba(150, 150, 150, 0.5);
+    border-radius      : 3px;
+    position           : relative;
+}
+
+.single-book .book-cover .edit-book {
+    display                   : none;
+    position                  : absolute;
+    top                       : 0;
+    right                     : 0;
+    width                     : 48px;
+    height                    : 48px;
+    background                : rgba(255, 255, 255, .8);
+    font-size                 : 1.5rem;
+    border-bottom-left-radius : 100%;
+    padding                   : 3px 10px 0 20px;
+}
+
+.single-book .book-cover:hover .edit-book {
+    display : block;
+}
+
+.single-book .book-meta {
+
+}
+
+.single-book .book-meta td {
+    font-size   : .9rem;
+    font-weight : 400;
+    border      : 0;
+    padding     : 10px 0 10px 0px;
+}
+
+.single-book .book-meta td:first-child {
+    width          : 25%;
+    font-weight    : 700;
+    font-family    : "Montserrat", sans-serif;
+    text-transform : uppercase;
+}
+
+.single-book .book-meta a {
+    color : #059BF3;
+}
+
+.single-book .book-meta a:hover {
+    color : #3D3D3D;
+}
+
+.single-book .book-year {
+    margin : 0;
+}
+
+.single-book .book-description {
+
+}
+
+.single-book .book-links {
+    text-align : center;
+    margin     : 20px 0;
+}
+
+.single-book .download-link, .single-book .read-link {
+    width     : 120px;
+    font-size : .9rem;
+}
+
+.single-book .reviews {
+
+}
+
+.single-book .reviews .add-review {
+    margin : 20px 0 60px;
+}
+
+.single-book .reviews .add-review .submit-review {
+    text-transform : uppercase;
+    font-weight    : 700;
+    border-radius  : 5%;
+    padding        : 5px 25px;
+}
+
+.single-book .reviews .review {
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    border-radius      : 3px;
+    background         : #FFFFFF;
+    padding            : 20px;
+    margin             : 20px 0;
+}
+
+.single-book .reviews .review .review-user {
+    font-weight   : 600;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+}
+
+.single-book .reviews .review .review-rating {
+    text-align : right;
+}
+
+.single-book .reviews .review .review-meta {
+    color     : #9C9C9C;
+    font-size : .8rem;
+    display   : block;
+}
+
+.single-book .reviews .review .review-content {
+    margin     : 20px 0 0 0;
+    font-size  : .9rem;
+    transition : height 200ms;
+    overflow   : hidden;
+    max-height : 9.5em;
+}
+
+.single-book .reviews .review .read-more {
+    float     : right;
+    color     : #9C9C9C;
+    font-size : .8rem;
+    display   : block;
+}
+
+.single-book .add-review-collapse {
+    font-weight    : 600;
+    text-transform : uppercase;
+    font-size      : .9rem;
+}
+
+.single-book .notes {
+    color     : #9C9C9C;
+    font-size : .8rem;
+    margin    : 10px 0 15px;
+}
+
+/* ---------------------------------------------
+                HOME CAROUSEL
+--------------------------------------------- */
+.home-book-carousel .book {
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    margin             : 20px 0;
+    height             : 260px;
+    max-width          : 600px;
+    background         : #FFFFFF;
+    padding            : 25px;
+    color              : #FFFFFF;
+}
+
+.home-book-carousel .book-cover img {
+    -webkit-box-shadow : 0 5px 10px rgba(150, 150, 150, 0.6);
+    box-shadow         : 0 5px 10px rgba(150, 150, 150, 0.6);
+    height             : 190px;
+    width              : 180px !important;
+}
+
+.home-book-carousel .book-title a {
+    font-size : 1.6rem;
+    color     : #FFFFFF;
+}
+
+.home-book-carousel .book-attr {
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+}
+
+.home-book-carousel .book-publishing-year {
+    font-size : .9rem;
+    color     : #FFFFFF;
+}
+
+.home-book-carousel .book-author {
+    font-size : .9rem;
+    color     : #FFFFFF;
+}
+
+.home-book-carousel .whole-rating {
+    color : #FFFFFF;
+}
+
+.home-book-carousel .book-short-description {
+    font-size  : .9rem;
+    max-height : 130px;
+    color      : #FFFFFF;
+    overflow   : hidden;
+}
+
+.green-bg {
+    background : #04C993 !important;
+    /*box-shadow: rgb(4, 201, 147) 0px 16px 60px -15px;*/
+}
+
+.purple-bg {
+    background : #7084D1 !important;
+    /*box-shadow: rgb(112, 132, 209) 0px 16px 60px -15px;*/
+}
+
+.blue-bg {
+    background : #62B9DF !important;
+    /*box-shadow: rgb(98, 185, 223) 0px 16px 60px -15px;*/
+}
+
+.burgundy-bg {
+    background : #66195E !important;
+}
+
+.beige-bg {
+    background : #946E55 !important;
+}
+
+.pink-bg {
+    background : #F16F82 !important;
+}
+
+/* ---------------------------------------------
+                    SHARE BUTTONS
+--------------------------------------------- */
+
+.social-btns .btn,
+.social-btns .btn:before,
+.social-btns .btn .fa {
+    -webkit-transition                 : all 0.35s;
+    transition                         : all 0.35s;
+    -webkit-transition-timing-function : cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition-timing-function         : cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.social-btns .btn:before {
+    top  : 90%;
+    left : -110%;
+}
+
+.social-btns .btn i {
+    -webkit-transform : scale(0.8);
+    transform         : scale(0.8);
+}
+
+.social-btns .btn.facebook:before {
+    background-color : #3B5998;
+}
+
+.social-btns .btn.facebook i {
+    color : #3B5998;
+}
+
+.social-btns .btn.twitter:before {
+    background-color : #33CCFF;
+}
+
+.social-btns .btn.twitter i {
+    color : #33CCFF;
+}
+
+.social-btns .btn.vk:before {
+    background-color : #4C75A3;
+}
+
+.social-btns .btn.vk i {
+    color : #4C75A3;
+}
+
+.social-btns .btn.google:before {
+    background-color : #DC4A38;
+}
+
+.social-btns .btn.google i {
+    color : #DC4A38;
+}
+
+.social-btns .btn.pinterest:before {
+    background-color : #AA2529;
+}
+
+.social-btns .btn.pinterest i {
+    color : #AA2529;
+}
+
+.social-btns .btn:focus:before,
+.social-btns .btn:hover:before {
+    top  : -10%;
+    left : -10%;
+}
+
+.social-btns .btn:focus i,
+.social-btns .btn:hover i {
+    color             : #FFFFFF;
+    -webkit-transform : scale(1);
+    transform         : scale(1);
+}
+
+.social-btns {
+    margin     : auto;
+    font-size  : 0;
+    text-align : center;
+}
+
+.social-btns .btn {
+    display            : inline-block;
+    background-color   : #FFFFFF;
+    width              : 40px;
+    height             : 40px;
+    line-height        : 26px;
+    margin             : 10px 3px;
+    text-align         : center;
+    position           : relative;
+    overflow           : hidden;
+    border-radius      : 50%;
+    -webkit-box-shadow : 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+    box-shadow         : 0 5px 15px -5px rgba(0, 0, 0, 0.1);
+    opacity            : 0.99;
+    padding            : 6px;
+    border             : 0;
+}
+
+.social-btns .btn:before {
+    content           : '';
+    width             : 120%;
+    height            : 120%;
+    position          : absolute;
+    -webkit-transform : rotate(45deg);
+    transform         : rotate(45deg);
+}
+
+.social-btns .btn i {
+    font-size      : 28px;
+    vertical-align : middle;
+}
+
+/* ---------------------------------------------
+                 BLOG POSTS
+--------------------------------------------- */
+.mini-list-posts {
+
+}
+
+.mini-list-posts .post {
+    margin : 10px 0;
+}
+
+.mini-list-posts .post img {
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    border-radius      : 3px;
+}
+
+.mini-list-posts .post-title {
+    font-size   : 1rem;
+    color       : #000000;
+    font-weight : 400;
+    margin      : 3px 0;
+}
+
+.mini-list-posts .post-meta {
+    color         : #9C9C9C;
+    font-size     : .8rem;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    margin        : 3px 0;
+}
+
+.blog-posts {
+    margin : 80px 0 100px;
+}
+
+.blog-posts h1 {
+    font-weight : 700;
+    font-family : "Montserrat", sans-serif;
+    text-align  : center;
+    color       : #000000;
+    margin      : 0 0 20px;
+}
+
+.blog-posts .post {
+    -webkit-box-shadow : 0 1px 2px rgba(150, 150, 150, 0.3);
+    box-shadow         : 0 1px 2px rgba(150, 150, 150, 0.3);
+    border-radius      : 3px;
+    margin             : 20px 0;
+    background         : #FFFFFF;
+    padding            : 0;
+    max-height         : 420px;
+    min-height         : 420px;
+}
+
+.blog-posts .post .post-img {
+    text-align : center;
+}
+
+.blog-posts .post .post-img a {
+    display : block;
+}
+
+.blog-posts .post .post-img img {
+    max-height : 150px;
+    width      : 100%;
+    max-width  : 100%;
+}
+
+.blog-posts .post .post-info {
+    padding : 20px;
+}
+
+.blog-posts .post .post-title {
+}
+
+.blog-posts .post .post-title h4 {
+    color         : #000000;
+    font-weight   : 400;
+    font-size     : 1rem;
+    margin-bottom : 15px;
+}
+
+.blog-posts .post .post-meta {
+    color         : #9C9C9C;
+    font-size     : .8rem;
+    overflow      : hidden;
+    text-overflow : ellipsis;
+    white-space   : nowrap;
+    margin        : 10px 0;
+}
+
+.blog-posts .post .post-short-description {
+    color     : #738797;
+    font-size : .9rem;
+}
+
+/* ---------------------------------------------
+                    POST
+--------------------------------------------- */
+.single-post {
+    margin-bottom : 100px;
+}
+
+.single-post .post-img {
+    height              : 370px;
+    background-position : center;
+    background-repeat   : no-repeat;
+    background-size     : cover;
+}
+
+.single-post h1 {
+    font-weight : 700;
+    font-family : "Montserrat", sans-serif;
+    text-align  : center;
+    color       : #000000;
+    margin      : 40px 0 20px;
+}
+
+.single-post .post-content {
+    padding : 0 180px;
+}
+
+.single-post .post-meta span {
+    margin : 0 10px;
+}
+
+.single-post .post-meta span i {
+    margin-right : 5px;
+}
+
+.single-post .post-text {
+    margin : 30px 0 50px;
+}
+
+/* ---------------------------------------------
+                 PAGE
+--------------------------------------------- */
+.page {
+    margin : 30px 0 100px;
+}
+
+.page h1 {
+    font-weight : 700;
+    font-family : "Montserrat", sans-serif;
+    text-align  : center;
+    color       : #000000;
+    margin      : 40px 0 20px;
+}
+
+/* ---------------------------------------------
+            CUSTOM PAGE: CONTACTS
+--------------------------------------------- */
+.contact-form {
+    margin : 30px 0;
+}
+
+/* ---------------------------------------------
+                ERROR PAGES
+--------------------------------------------- */
+.error-page {
+    margin : 80px 0 100px;
+}
+
+.error-page h1 {
+    font-weight : 700;
+    font-family : "Montserrat", sans-serif;
+    text-align  : center;
+    color       : #000000;
+    margin      : 20px 0;
+    font-size   : 8rem;
+}
+
+/* ---------------------------------------------
+                        FOOTER
+    --------------------------------------------- */
+
+footer {
+    padding-bottom : 16px;
+    padding-top    : 16px;
+    margin-top     : 50px;
+    position       : absolute;
+    bottom         : 0;
+    width          : 100%;
+    height         : 60px;
+}
+
+button.back-to-top {
+    margin     : 0;
+    padding    : 0;
+    background : #FFFFFF;
+    height     : 0;
+    width      : 30px;
+    overflow   : hidden;
+    color      : transparent;
+    clear      : both;
+    visibility : hidden;
+    position   : fixed;
+    cursor     : pointer;
+    display    : block;
+    border     : none;
+    right      : 25px;
+    bottom     : 75px;
+    font-size  : 0;
+    outline    : 0 !important;
+    z-index    : 99;
+    transition : all .3s ease-in-out;
+}
+
+button.back-to-top:hover,
+button.back-to-top:active,
+button.back-to-top:focus {
+    outline : 0 !important;
+}
+
+button.back-to-top.show {
+    display       : block;
+    color         : #FFFFFF;
+    font-size     : 14px;
+    right         : 25px;
+    bottom        : 50px;
+    height        : 30px;
+    width         : 30px;
+    visibility    : visible;
+    background    : #DBE1E4;
+    border-bottom : 3px solid #C9D0D4;
+    padding       : 5px;
+}
+
+button.back-to-top.show:active {
+    box-shadow         : 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow : 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow    : 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------------------------------------------
+                   REGISTRATION
+    --------------------------------------------- */
+.registration {
+    margin : 80px 0 100px 0;
+}
+
+.registration h1 {
+    font-weight : 700;
+    font-family : "Montserrat", sans-serif;
+    text-align  : center;
+    color       : #000000;
+    margin      : 20px 0;
+}
+
+.registration select.form-control:not([size]):not([multiple]) {
+    padding    : 0.35rem .75rem;
+    border     : 2px solid rgba(120, 130, 140, 0.15);
+    box-shadow : none;
+    height     : calc(2.65rem + 2px);
+}
+
+.registration-successfully {
+    text-align : center;
+}
+
+.registration-successfully .thanks {
+    color       : #24CE6E;
+    font-weight : 700;
+    font-size   : 40px;
+    margin      : 20px 0 30px 0;
+}
+
+.registration-successfully p {
+    font-size : 20px;
+}
+
+.registration-successfully svg {
+    display : block;
+    width   : 150px;
+    margin  : 20px auto;
+}
+
+.registration-successfully path, .registration-successfully polyline {
+    fill            : none;
+    stroke          : #24CE6E;
+    stroke-width    : 20;
+    stroke-linecap  : round;
+    stroke-linejoin : round;
+}
+
+.registration-successfully .circle {
+    stroke-dasharray : 1260;
+    animation        : circle 1s linear;
+}
+
+.registration-successfully .check {
+    stroke-dasharray : 430;
+    animation        : check 1s linear;
+}
+
+@keyframes circle {
+    0%, 40% {
+        stroke-dashoffset : -1260;
+    }
+    100% {
+        stroke-dashoffset : 0;
+    }
+}
+
+@keyframes check {
+    0% {
+        stroke-dashoffset : 430;
+    }
+    40% {
+        stroke-dashoffset : 0;
+    }
+}

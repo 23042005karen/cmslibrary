@@ -1,0 +1,17 @@
+{
+  "cover": "resources/images/theme_default.png",
+  "title": "Library CMS - Simple",
+  "version": "1.0",
+  "author": "KAA Soft",
+  "type": "public",
+  "advertisementLocations": {
+    "headerLeft": "Header Left Position",
+    "headerRight": "Header Left Position",
+    "contentRight": "Content Right Position"
+  },
+  "menuLocations": {
+    "headerTop": "Top Header Menu",
+    "headerRight": "##",
+    "contentRight": "#"
+  }
+}
